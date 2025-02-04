@@ -1,0 +1,294 @@
+html{
+  background-color:#3f0000;
+}
+body{
+    font-family: arial, sans-serif;
+    margin:0;
+    padding:0;
+
+   
+}
+#gallery-container{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    align-content:center;
+    gap:10px;
+    padding:10px;
+    margin-left:34%;
+}
+#gallery-container figure{
+    margin:0;
+    text-align: center;
+}
+#gallery-container figcaption{
+    font-size:0.9rem;
+    margin-top:5px;
+    color:lightgray;
+}
+#gallery-container img{
+    width:100%;
+    border-radius: 5px;
+    transition:transform 0.3s ease;
+    filter:grayscale(50%) contrast(75%) brightness(0.8);
+    width: 100%;
+}
+#gallery-container img:hover{
+    transform:scale(1.0756);
+    transition:transform 0.3s ease;
+    filter:none;
+}
+main{
+     display:flex;
+    justify-content: center;
+    align-items:center;
+    min-height:100vh;
+    background-color:#3f0000;
+    flex-direction: column;
+}
+#lightbox{
+    position:fixed;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+    background-color:rgba(0,0,0,25%);
+    justify-content: center;
+    align-items: center;
+    display:flex;
+    visibility:hidden;
+    opacity:0;
+    transition: opacity 0.3s ease;
+}
+#lightbox img{
+    max-width:50vw;
+    max-height: 50vh;
+}
+#lightbox.visible{
+    visibility:visible;
+    opacity: 1;
+}
+#lightbox-img{
+    transform:scale(1.4);
+}
+.lightbox-content{
+    position:relative;
+    display:flex;
+    align-items: center;
+}
+.lightbox-content button{
+    position:fixed;
+    top:50%;
+    transform:translateY(-50%);
+    background-color: rgba(0,0,0,0.6);
+    color:white;
+    border:none;
+    font-size:1.5rem;
+    cursor:pointer;
+    padding:0.5rem;
+    margin:0.1rem;
+    border-radius: 50%;
+    z-index:10;
+}
+#prev{
+    left:30vw;
+}
+#next{
+    right:30vw;
+}
+
+/* From Uiverse.io by eslam-hany */ 
+.book {
+    position: relative;
+    border-radius: 10px;
+    width: 30vw;
+    height: 50vh;
+    background-color: whitesmoke;
+    -webkit-box-shadow: 1px 1px 12px #000;
+    box-shadow: 1px 1px 12px #000;
+    -webkit-transform: preserve-3d;
+    -ms-transform: preserve-3d;
+    transform: preserve-3d;
+    -webkit-perspective: 2000px;
+    perspective: 2000px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #3f0000;
+    font-weight: 900;
+    align-content: center;
+  }
+  
+  .cover {
+    top: 0;
+    position: absolute;
+    background-color: pink;
+    width: 30vw;
+    height: 50vh;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform-origin: 0;
+    -ms-transform-origin: 0;
+    transform-origin: 0;
+    -webkit-box-shadow: 1px 1px 12px #000;
+    box-shadow: 1px 1px 12px #000;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color:#3f0000;
+  }
+  
+  .book:hover .cover {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform: rotatey(-80deg);
+    -ms-transform: rotatey(-80deg);
+    transform: rotatey(-80deg);
+  }
+  
+  p {
+    font-size: 20px;
+    font-weight: bolder;
+  }
+
+
+
+/* From Uiverse.io by musashi-13 */ 
+.container {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .container div {
+    position: absolute;
+    height: 196px;
+    width: 132px;
+    background-color: #ebebeb;
+    border: 5px solid #ffffff;
+    border-bottom: 40px solid #ffffff;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    border-radius: 8%;
+    box-shadow: #c7c7c7 -2px 2px 4px;
+    transform-origin: bottom left;
+    scale: 1;
+    transition-duration: 200ms;
+  }
+  
+  .container div:hover {
+    scale: 1.1;
+  }
+  
+  .container div:nth-child(n) {
+    transform: rotate(0deg) translate(0px, -8px);
+  }
+  
+  .container:hover div:nth-child(1) {
+    transform: rotate(-54deg) translate(0px, -8px);
+  }
+  .container:hover div:nth-child(2) {
+    transform: rotate(-36deg) translate(0px, -8px);
+  }
+  .container:hover div:nth-child(3) {
+    transform: rotate(-18deg) translate(0px, -8px);
+  }
+  .container:hover div:nth-child(4) {
+    transform: rotate(0deg) translate(0px, -8px);
+  }
+  .container:hover div:nth-child(5) {
+    transform: rotate(18deg) translate(0px, -8px);
+  }
+  .container:hover div:nth-child(6) {
+    transform: rotate(36deg) translate(0px, -8px);
+  }
+  .container:hover div:nth-child(7) {
+    transform: rotate(54deg) translate(0px, -8px);
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --gold: #ffb338;
+    --light-shadow: #77571d;
+    --dark-shadow: #3e2904;
+  }
+  .wrapper {
+    display: grid;
+    grid-template-areas: 'overlap';
+    place-content: center;
+    text-transform: uppercase;
+  
+  }
+  .wrapper > div {
+    background-clip: text;  
+    -webkit-background-clip: text;
+    color: #3b0a0a;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: clamp( 3em, 12vw, 3rem);
+    grid-area: overlap;
+    letter-spacing: 1px;
+    -webkit-text-stroke: 4px transparent;
+  }
+  div.bg {
+    background-image: repeating-linear-gradient( 105deg, 
+      var(--gold) 0% , 
+      var(--dark-shadow) 5%,
+      var(--gold) 12%);
+    color: transparent;
+    filter: drop-shadow(5px 15px 15px black);
+    transform: scaleY(1.05);
+    transform-origin: top;
+  }
+  div.fg{
+    background-image: repeating-linear-gradient( 5deg,  
+      var(--gold) 0% , 
+      var(--light-shadow) 23%, 
+      var(--gold) 31%);
+    color: #3f0000;
+    transform: scale(1);
+  }
+  
+  
+@media (max-width:393px){
+    h1{
+      margin:auto;
+    }
+    #gallery-container{
+        grid-template-columns: repeat(2,1fr);
+        margin:auto;
+    }
+    #prev{
+        left:5vw;
+    }
+    #next{
+        right:5vw;
+    }
+    .book, .cover{
+        width:100vw;
+        height:50vh;
+    }
+    #lightbox-img{
+        transform:scale(2);
+    }
+    .container {
+        transform:scale(0.75);
+    margin-left:2vw;  
+    }
+}
