@@ -8,7 +8,7 @@ const lightboxImg = document.getElementById('lightbox-img');
 let currentIndex = 0;//Tracks displayed image index
 
 galleryImages.forEach((image,index) => {
-    image.addEventListener('click', () => {
+    image.addEventListener('touchend', () => {
         currentIndex=index;
         lightboxImg.src = image.src;
         lightbox.classList.add('visible')
@@ -17,18 +17,18 @@ galleryImages.forEach((image,index) => {
 
 //Closes the lightbox when click outside of content
 
-lightbox.addEventListener('click', (event) => {
+lightbox.addEventListener('touchend', (event) => {
     if(event.target === lightbox){
 lightbox.classList.remove('visible')
     }
 })
 //Show next image in the lightbox
-document.getElementById('next').addEventListener('click',() => {
+document.getElementById('next').addEventListener('touchend',() => {
     currentIndex = (currentIndex + 1) % images.length;
     lightboxImg.src = images[currentIndex].src;
 })
 //Show previous image in lightbox
-document.getElementById('prev').addEventListener('click',() => {
+document.getElementById('prev').addEventListener('touchend',() => {
     currentIndex = (currentIndex - 1 + images.length) % images.length;
     lightboxImg.src = images[currentIndex].src;
 })
